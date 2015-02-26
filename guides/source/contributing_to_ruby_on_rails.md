@@ -237,7 +237,6 @@ require 'benchmark/ips'
 Benchmark.ips do |x|
   x.report('addition') { 1 + 2 }
   x.report('addition with send') { 1.send(:+, 2) }
-  x.compare!
 end
 ```
 
@@ -250,10 +249,6 @@ Calculating -------------------------------------
 -------------------------------------------------
             addition      9.677M (± 1.7%) i/s -     48.449M
   addition with send      6.794M (± 1.1%) i/s -     33.987M
-
-Comparison:
-            addition:  9676961.5 i/s
-  addition with send:  6794380.3 i/s - 1.42x slower
 ```
 
 Please see the benchmark/ips [README](https://github.com/evanphx/benchmark-ips/blob/master/README.md) for more information.
